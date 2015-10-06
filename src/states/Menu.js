@@ -23,7 +23,7 @@ menu.prototype = {
         this.world.pivot.set(0, 0);
         this.world.angle = 0;
 
-        Cocoon.Device.setOrientation(Cocoon.Device.Orientations.BOTH);
+        this.scale.forceOrientation(true);
 
         if (changeColor) {
             chosenColor = this.game.rnd.integerInRange(0, 3);

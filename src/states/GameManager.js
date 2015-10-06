@@ -273,9 +273,10 @@ gameMananger.prototype = {
                     align: "center"
                 });
 
-                if (this.mode.submitScore) {
-                    this.mode.submitScore();
-                }
+                //TODO: Remove this...
+                //if (this.mode.submitScore) {
+                //    this.mode.submitScore();
+                //}
 
                 var textHighScore = this.add.text(w2 + 35, h2 + 220, this.mode.getHighScore().toString(), {
                     font: "40px dosis",
@@ -421,9 +422,10 @@ gameMananger.prototype = {
                             console.error("login error: " + error.message);
                         } else if (loggedIn) {
                             var score = this.mode.getScore();
-                            socialService.submitScore(score, function () {
-                                socialService.showLeaderboard(null, params);
-                            }, params);
+                            // TODO : Remove this ...
+                            //socialService.submitScore(score, function () {
+                            //    socialService.showLeaderboard(null, params);
+                            //}, params);
                         }
                     }.bind(this));
                 }

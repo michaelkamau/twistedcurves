@@ -424,9 +424,10 @@ Player.prototype = {
 	},
 
 	pause: function () {
-		if (this.mode.submitScore) {
-			this.mode.submitScore();
-		}
+		//TODO : Remove this ...
+		//if (this.mode.submitScore) {
+		//	this.mode.submitScore();
+		//}
 		if (this.textTween) {
 			this.textTween.pause();
 		}

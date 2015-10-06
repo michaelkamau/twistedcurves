@@ -97,16 +97,17 @@ Normal.prototype = {
         localStorage.setItem("highScore", score);
     },
 
-    submitScore: function () {
-        var params = Cocoon.Social.ScoreParams;
-        if (this.score > this.getHighScore()) {
-            this.setHighScore(this.score);
-        }
-        params.leaderboardID = this.leaderboardID;
-        if (mobile && socialService && socialService.isLoggedIn()) {
-            socialService.submitScore(this.score, null, params);
-        }
-    },
+    //TODO : Remove this ...
+    //submitScore: function () {
+    //    var params = Cocoon.Social.ScoreParams;
+    //    if (this.score > this.getHighScore()) {
+    //        this.setHighScore(this.score);
+    //    }
+    //    params.leaderboardID = this.leaderboardID;
+    //    if (mobile && socialService && socialService.isLoggedIn()) {
+    //        socialService.submitScore(this.score, null, params);
+    //    }
+    //}params,
 
     collect: function (playerSprite, powerSprite) {
         var point = this.lastPoint;

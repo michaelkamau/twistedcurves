@@ -6,12 +6,6 @@ preloadMenu.prototype = {
 	preload: function () {
 		var wOrientation = Math.abs(window.orientation) - 90 == 0 ? "landscape" : "portrait";
 
-		if (wOrientation == "portrait") {
-			Cocoon.Device.setOrientation(Cocoon.Device.Orientations.PORTRAIT);
-		} else {
-			Cocoon.Device.setOrientation(Cocoon.Device.Orientations.LANDSCAPE);
-		}
-
 		// add the loading sprite at the center of the screem.
 	    this.loadingBar = this.add.sprite(w2,h2,"loading");
 
