@@ -51,14 +51,9 @@ preloadMenu.prototype = {
 	},
 
   	create: function () {
- 	// 	if (!mobile) {
-		// 	this.game.time.events.add(Phaser.Timer.SECOND * 1, function () {
-		// 		this.game.state.start("Menu");
-		// 	}, this);
-		// } else {
-		// 	this.game.state.start("Menu");
-		// }
-		this.loadingBar.body.angularVelocity = -300;
+  		// Reverese the direction of the loading bar
+  		// Should make it slower for a cooler effect ...
+		this.loadingBar.body.angularVelocity = -200;
 	},
 
 
