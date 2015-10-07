@@ -63,7 +63,6 @@ menu.prototype = {
         });
         ui.title.anchor.setTo(0.5, 0.5);
 
-        // Remove unneeded buttons
 
         // loading prompt
         ui.loadingPrompt = this.add.sprite(0,0,"loading");
@@ -125,9 +124,7 @@ menu.prototype = {
 
     },
 
-    leaderboard: function () {
-        this.state.start("Leaderboards");
-    },
+
 
     stats: function () {
         this.state.start("Stats");
@@ -156,9 +153,6 @@ menu.prototype = {
         }
     },
 
-    backPressed: function () {
-        //exit game?
-    },
 
     setPositions: function () {
         var ui = this.ui;
@@ -173,10 +167,10 @@ menu.prototype = {
         }
 
         // add the loading Prompt.
-        ui.loadingPrompt.position.set(w2,h2);
+        ui.loadingPrompt.position.set(w2, h2 + 50);
 
         // add the playText.
-        ui.playButton.position.set(w2+25,h2+50);
+        ui.playButton.position.set(w2 + 25, h2 + 75);
 
         ui.statsButton.position.set(1.6 * w2, 1.6 * h2);
 

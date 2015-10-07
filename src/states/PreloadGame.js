@@ -23,12 +23,8 @@ preloadGame.prototype = {
         }
 
         // TODO : Remove assets that are not used.
-        //Load all stuf from game
-        this.game.load.image('crown','assets/crown.png');
         this.game.load.image('score', 'assets/sprites/menu/score-general.png');
         this.game.load.image('pauseButton', 'assets/sprites/menu/pause.png');
-        this.game.load.image('screenshotButton', 'assets/sprites/menu/screenshot.png');
-        this.game.load.image('winner', 'assets/sprites/menu/winner.png');
         this.game.load.image('touch', 'assets/sprites/menu/touch.png');
         this.game.load.image('overlay', 'assets/overlay.png');
         // audio
@@ -43,7 +39,7 @@ preloadGame.prototype = {
 
     create: function () {
         // start the GameManager state. Clear the game world display,
-        this.game.state.start("GameMananger", true, false, this.mode);
+        // this.game.state.start("GameMananger", true, false, this.mode);
     },
 
     update: function () {

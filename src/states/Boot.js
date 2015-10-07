@@ -32,7 +32,8 @@ boot.prototype = {
         h2 = this.game.world.height / 2;
 
         //Background colors
-        bgColors = ["#BBEC7A",
+        // NOTE: These are actually BRIGHT colors
+        bgColorsDark = ["#BBEC7A",
             "#E19CD4",
             "#69D2D1",
             "#F3A07F",
@@ -60,7 +61,9 @@ boot.prototype = {
             "#C2C1D7",
             "#94C0CB",
             "#E7AFD8"];
-        bgColorsDark = ["#2F4E2D",
+
+        // And these are DARK nice colors !
+        bgColors = ["#2F4E2D",
             "#845269",
             "#426B7E",
             "#855637",
@@ -117,22 +120,6 @@ boot.prototype = {
         this.physics.startSystem(Phaser.Physics.ARCADE);
 
         this.stage.smoothed = false; // diables texture smoothing. This is enabled by default.
-
-        // TODO : Remove this
-        //if (mobile) {
-        //    Cocoon.App.exitCallback(
-        //        function () {
-        //            if (this.state.states[this.game.state.current].backPressed) {
-        //                this.state.states[this.game.state.current].backPressed();
-        //            }
-        //            if (this.state.current == "Menu") {
-        //                return true;
-        //            } else {
-        //                return false;
-        //            }
-        //        }.bind(this)
-        //    );
-        //}
 
         this.state.start("PreloadMenu");
     },

@@ -151,22 +151,6 @@ gameMananger.prototype = {
         if (!mute) {
             menuMusic.volume = 1;
         }
-
-
-        //Ad stuff
-        if (!iapDone) {
-            playCounter++;
-        }
-
-        if (playCounter == 4) {
-            this.loadAd();
-        }
-
-        if (playCounter >= 5) {
-            Cocoon.Ad.showInterstitial();
-            playCounter = 0;
-        }
-
     },
 
     update: function () {
@@ -260,12 +244,12 @@ gameMananger.prototype = {
                 spAuxLabel.alpha = 0.7;
 
                 var spScoreLabel = this.add.sprite(w2, h2 + 217, "score-stat");
-                spScoreLabel.scale.set(0.6, 0.6);
+                spScoreLabel.scale.set(0.5, 0.5);
                 spScoreLabel.anchor.setTo(0.5, 0.5);
                 spScoreLabel.alpha = 0.7;
-                if (mobile) {
-                    spScoreLabel.x = w2 - 60;
-                }
+                //if (mobile) {
+                //    spScoreLabel.x = w2 - 60;
+                //}
 
                 var textCurrentScore = this.add.text(w2, h2 + 77, this.mode.getScore().toString(), {
                     font: "90px dosis",
@@ -273,30 +257,20 @@ gameMananger.prototype = {
                     align: "center"
                 });
 
-                //TODO: Remove this...
-                //if (this.mode.submitScore) {
-                //    this.mode.submitScore();
-                //}
 
-                var textHighScore = this.add.text(w2 + 35, h2 + 220, this.mode.getHighScore().toString(), {
+                var textHighScore = this.add.text(w2 + 75, h2 + 220, this.mode.getHighScore().toString(), {
                     font: "40px dosis",
                     fill: colorHexDark,
                     align: "center"
                 });
 
                 if (mobile) {
-                    textHighScore.x = w2 + 35 - 60;
+                    textHighScore.x = w2 + 30;
                 }
                 textCurrentScore.anchor.setTo(0.5, 0.5);
                 textHighScore.anchor.setTo(0.5, 0.5);
 
-                if (mobile) {
-                    leaderboardButton = this.add.button(w2 + 105, h2 + 217, "leaderboard_button");
-                    leaderboardButton.scale.set(0.6, 0.6);
-                    leaderboardButton.anchor.setTo(0.5, 0.5);
-                    leaderboardButton.input.useHandCursor = true;
-                    clickButton(leaderboardButton, this.leaderboard, this);
-                }
+
             }
             gameOver = true;
         }
@@ -407,31 +381,6 @@ gameMananger.prototype = {
         }
     },
 
-    leaderboard: function () {
-        if (mobile) {
-            var params = Cocoon.Social.ScoreParams;
-            params.leaderboardID = this.mode.leaderboardID;
-            if (!socialService) {
-                socialInit();
-            } else {
-                if (socialService.isLoggedIn()) {
-                    socialService.showLeaderboard(null, params);
-                } else {
-                    socialService.login(function (loggedIn, error) {
-                        if (error) {
-                            console.error("login error: " + error.message);
-                        } else if (loggedIn) {
-                            var score = this.mode.getScore();
-                            // TODO : Remove this ...
-                            //socialService.submitScore(score, function () {
-                            //    socialService.showLeaderboard(null, params);
-                            //}, params);
-                        }
-                    }.bind(this));
-                }
-            }
-        }
-    },
 
     muteSound: function () {
         if (mute) {
@@ -448,14 +397,6 @@ gameMananger.prototype = {
 
     backPressed: function () {
         this.pause();
-    },
-
-    loadAd: function () {
-        Cocoon.Ad.loadInterstitial();
-    },
-
-    showAd: function () {
-        Cocoon.Ad.showInterstitial();
     },
 
     /*render: function(){

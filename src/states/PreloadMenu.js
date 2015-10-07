@@ -24,7 +24,6 @@ preloadMenu.prototype = {
 	    // loadingBar.angle --> the rotation of the loadingBar from its original orientation in degrees.
 	    // 
 		//this.game.physics.arcade.velocityFromAngle(this.loadingBar.angle, 3*this.speed, this.loadingBar.body.velocity);
-    	//Load all stuf from menu
 
 
     	// use a growing sprite.
@@ -45,8 +44,8 @@ preloadMenu.prototype = {
 		this.game.load.image("score-stat","assets/sprites/menu/score-stat.png");
 		this.game.load.image("total-stats","assets/sprites/menu/total-stats.png");
 		this.game.load.image("aux-stat","assets/sprites/menu/aux-stat.png");
-		
-		this.game.load.audio('dream', 'assets/music/dream.ogg');
+
+		this.game.load.audio('dream', 'assets/music/dream.mp3');
 
 	},
 
