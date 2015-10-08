@@ -1,5 +1,5 @@
 var gameMananger = function (game) {
-    this.crown = null;
+    //this.crown = null;
     this.gameTime = 60; //sec
     this.initialTime = 0;
     this.powerTimer = null;
@@ -51,37 +51,7 @@ gameMananger.prototype = {
 
 
         groupPowers = this.add.group();
-        if (this.mode.sp && this.mode.leaderboardID) {
-            if (!mobile) {
-                tempLabel = this.add.sprite(w2, h2, 'score');
-                tempLabel.anchor.setTo(0.5, 0.5);
-                tempLabel.alpha = 0.7;
-                tempLabelText = this.add.text(w2 + 50, h2 + 8, this.mode.getHighScore().toString(), {
-                    font: "100px dosis",
-                    fill: colorHex,
-                    align: "center"
-                });
-                tempLabelText.anchor.setTo(0.5, 0.5);
-            }
-
-        } else {
-            this.crown = this.add.sprite(w2, -32, 'crown');
-            this.crown.anchor.setTo(0.5, 0.8);
-            this.game.physics.enable(this.crown, Phaser.Physics.ARCADE);
-
-            ui.graphics.lineStyle(0);
-            ui.graphics.beginFill(0x000000, 0.2);
-            ui.timeCircle = ui.graphics.drawCircle(w2, h2, Math.sqrt(w2 * w2 + h2 * h2) * 2);
-            ui.timeCircle.pivot.x = w2;
-            ui.timeCircle.pivot.y = h2;
-            ui.graphics.endFill();
-
-            if (!this.mode.sp) {
-                //Generate powers
-                this.powerTimer = this.game.time.events.loop(Phaser.Timer.SECOND * 2, this.createPower, this);
-            }
-        }
-
+      
         if (mobile) {
             pauseSprite = this.add.button(2 * w2 - 100, 100, 'pauseButton', this.touchPauseButton, this);
             pauseSprite.anchor.setTo(0.5, 0.5);
