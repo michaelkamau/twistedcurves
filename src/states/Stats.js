@@ -86,10 +86,10 @@ stats.prototype = {
         ui.highScoretext.position.set(w2 + 40, h2);
 
         ui.totalBalls.position.set(w2 * 0.4, h2 + 75);
-        ui.totalBallsText.position.set(w2 * 0.4 + 15, h2 + 75);
+        ui.totalBallsText.position.set(w2 * 0.4 + 30, h2 + 75);
 
         ui.statsDeaths.position.set(w2 * 1.6, h2 + 75);
-        ui.textDeaths.position.set(w2 * 1.6 + 20, h2 + 75);
+        ui.textDeaths.position.set(w2 * 1.6 + 36, h2 + 75);
 
 
         ui.highScore.scale.set(1.5, 1.5);
