@@ -10,7 +10,7 @@ var Player = function (id, x, y, key, mode, game) {
 	this.key = key;
 	this.dead = false;
 	this.ready = false;
-	this.speed = 1; ///
+	this.speed = 1.3; ///
 	this.angularVelocity = 1;
 	this.growth = 30;
 	this.initialSize = 60;
@@ -410,10 +410,7 @@ Player.prototype = {
 	},
 
 	pause: function () {
-		//TODO : Remove this ...
-		//if (this.mode.submitScore) {
-		//	this.mode.submitScore();
-		//}
+		
 		if (this.textTween) {
 			this.textTween.pause();
 		}
