@@ -10,7 +10,7 @@ var Player = function (id, x, y, key, mode, game) {
 	this.key = key;
 	this.dead = false;
 	this.ready = false;
-	this.speed = 1;
+	this.speed = 1; ///
 	this.angularVelocity = 1;
 	this.growth = 30;
 	this.initialSize = 60;
@@ -271,20 +271,6 @@ Player.prototype = {
     		this.keyPressed();
     }
 
-    //do not work :(
-/*
-    else if(this.mode.leaderboardID == null){
-    	var x11 = w2*0.5 - 100 - 61, x22 = w2*0.5 - 100 + 61;
-
-	   	if (!(this.game.input.position.x > x11 
-	    	&& this.game.input.position.x < x22 
-	    	&& this.game.input.position.y > y1 
-	    	&& this.game.input.position.y < y2 )){
-	   		console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-	    	this.keyPressed();
-	   	}
-   	}
-   */
 	},
 
 	kill: function (player, other) {

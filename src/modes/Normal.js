@@ -8,7 +8,6 @@ var Normal = function(game) {
     this.sp = true;
     this.game = game;
     this.spawnPowers = true;
-    this.leaderboardID = modesLB[0];
     this.shrinkFreq = 5;
     this.obstacleGroup = null;
     this.cellSize = 64;
@@ -96,19 +95,7 @@ Normal.prototype = {
     setHighScore: function (score) {
         localStorage.setItem("highScore", score);
     },
-
-    //TODO : Remove this ...
-    //submitScore: function () {
-    //    var params = Cocoon.Social.ScoreParams;
-    //    if (this.score > this.getHighScore()) {
-    //        this.setHighScore(this.score);
-    //    }
-    //    params.leaderboardID = this.leaderboardID;
-    //    if (mobile && socialService && socialService.isLoggedIn()) {
-    //        socialService.submitScore(this.score, null, params);
-    //    }
-    //}params,
-
+   
     collect: function (playerSprite, powerSprite) {
         var point = this.lastPoint;
         if (point) {

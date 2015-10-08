@@ -161,10 +161,6 @@ gameMananger.prototype = {
             // gametime elapsed adjusted for fps
             totalTime += this.game.time.physicsElapsed;
 
-            /*if(!this.mode.gridIsFull()){
-             this.mode.createPower("point");
-             this.mode.createObstacle();
-             }*/
 
             if (!gameOver) {
                 //Give crown
@@ -389,10 +385,7 @@ gameMananger.prototype = {
         this.pause();
     },
 
-    /*render: function(){
-     players[0].render();
-     },*/
-
+   
     renderGroup: function (member) {
         //this.game.debug.body(member);
     }
