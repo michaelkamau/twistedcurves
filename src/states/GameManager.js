@@ -247,20 +247,17 @@ gameMananger.prototype = {
                 spScoreLabel.scale.set(0.5, 0.5);
                 spScoreLabel.anchor.setTo(0.5, 0.5);
                 spScoreLabel.alpha = 0.7;
-                //if (mobile) {
-                //    spScoreLabel.x = w2 - 60;
-                //}
-
+               
                 var textCurrentScore = this.add.text(w2, h2 + 77, this.mode.getScore().toString(), {
                     font: "90px dosis",
-                    fill: colorHexDark,
+                    fill: "#ffffff",
                     align: "center"
                 });
 
 
                 var textHighScore = this.add.text(w2 + 75, h2 + 220, this.mode.getHighScore().toString(), {
                     font: "40px dosis",
-                    fill: colorHexDark,
+                    fill: "#ffffff",
                     align: "center"
                 });
 
