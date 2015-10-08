@@ -250,14 +250,14 @@ gameMananger.prototype = {
                
                 var textCurrentScore = this.add.text(w2, h2 + 77, this.mode.getScore().toString(), {
                     font: "90px dosis",
-                    fill: "#ffffff",
+                    fill: "#000000",
                     align: "center"
                 });
 
 
                 var textHighScore = this.add.text(w2 + 75, h2 + 220, this.mode.getHighScore().toString(), {
                     font: "40px dosis",
-                    fill: "#ffffff",
+                    fill: "#000000",
                     align: "center"
                 });
 
