@@ -294,17 +294,10 @@ gameMananger.prototype = {
             paused = true;
             ui.overlay.inputEnabled = false;
 
-            if (mobile) {
-                pauseSprite.alpha = 0;
-            } else if (this.mode.sp && this.mode.leaderboardID) {
-                tempLabel.alpha = 0;
-                tempLabelText.alpha = 0;
-            }
-
-            if (!this.mode.sp) {
-                this.game.time.events.remove(this.powerTimer);
-            }
-
+            
+            // hide the pause button
+            pauseSprite.alpha = 0;
+            
             ui.menu = this.add.button(w2, h2 - 150, 'resume_button');
             ui.menu.anchor.setTo(0.5, 0.5);
             ui.menu.scale.set(1, 1);
